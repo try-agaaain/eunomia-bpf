@@ -2,17 +2,11 @@ name: Build and publish ecc docker image
 
 on:
   workflow_run:
-    workflows: [Build and test compiler on Ubuntu, Build and test ecli on Ubuntu]
+    workflows: 
+      - Build and test compiler on Ubuntu
+      - Build and test ecli on Ubuntu
     types:
       - completed
-  # run it on push to the default repository branch
-  push:
-    branches: "*"
-    paths:
-      - "compiler/**"
-      - ".github/**"
-  # run it during pull request
-  pull_request:
 
 jobs:
   # define job to build and publish docker image
