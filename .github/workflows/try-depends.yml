@@ -2,9 +2,9 @@ name: try depends
 
 on:
   workflow_run:
-    workflows: 
+    workflows:
       - Build and test compiler on Ubuntu
-    types: 
+    types:
       - completed
 
 
