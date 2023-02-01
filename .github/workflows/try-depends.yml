@@ -3,7 +3,8 @@ name: try depends
 on:
   workflow_run:
     workflows: [ Build and test compiler on Ubuntu ]
-    types: [ completed ]
+    types: 
+      - completed
 
 
 jobs:

@@ -5,7 +5,8 @@ on:
     workflows:
       - Build and test compiler on Ubuntu
       - Build and test ecli on Ubuntu
-    types: [ completed ]
+    types: 
+      - completed
 
 
 jobs:
