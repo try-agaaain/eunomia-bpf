@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends libelf1 libe
 
 COPY ./. /usr/local/src
 
-RUN make
+RUN make -C /usr/local/src
 RUN tar -zxf wasi-sdk-16.0-linux.tar.gz && mkdir /opt/wasi-sdk/ && mv wasi-sdk-16.0/* /opt/wasi-sdk/
 
 VOLUME /data/
