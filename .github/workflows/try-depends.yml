@@ -4,10 +4,8 @@ on:
   workflow_run:
     workflows:
       - Build and test compiler on Ubuntu
-      - djafkdfj
     types:
       - completed
-      - requested
 
 
 jobs:
