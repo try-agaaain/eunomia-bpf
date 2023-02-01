@@ -7,6 +7,10 @@ on:
       - Build and test ecli on Ubuntu
     types:
       - completed
+  # run it on push to the default repository branch
+  push:
+    branches: "*"
+
 
 jobs:
   # define job to build and publish docker image
