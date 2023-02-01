@@ -5,8 +5,11 @@ on:
     workflows:
       - Build and test compiler on Ubuntu
       - Build and test ecli on Ubuntu
-    types: 
+    types:
       - completed
+  # run it on push to the default repository branch
+  push:
+    branches: "docker"
 
 
 jobs:
