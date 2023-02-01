@@ -1,0 +1,20 @@
+name: Build and publish ecc docker image
+
+on:
+  workflow_run:
+    workflows:
+      - Build and test compiler on Ubuntu
+      - djafkdfj
+    types:
+      - completed
+      - requested
+
+
+jobs:
+  build-and-push-docker-image:
+    name: Build Docker image and push to repositories
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Image digest
+        run: echo hello
