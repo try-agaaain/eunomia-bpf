@@ -3,8 +3,8 @@ name: Build and publish ecc docker image
 on:
   workflow_run:
     workflows:
-      - Build and test compiler on Ubuntu
-      - Build and test ecli on Ubuntu
+      - "Build and test compiler on Ubuntu"
+      - "Build and test ecli on Ubuntu"
     types:
       - completed
   # run it on push to the default repository branch
