@@ -74,6 +74,11 @@ $(ECC): $(BPFTOOL)
 install:
 	rm -rf ~/.eunomia && cp -r workspace ~/.eunomia
 
+wasi-sdk:
+	wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-17/wasi-sdk-17.0-linux.tar.gz
+	tar -zxf wasi-sdk-17.0-linux.tar.gz
+	sudo mkdir -p /opt/wasi-sdk/ && sudo mv wasi-sdk-17.0/* /opt/wasi-sdk/
+
 .PHONY: test
 test:
 	cargo install clippy-sarif sarif-fmt grcov

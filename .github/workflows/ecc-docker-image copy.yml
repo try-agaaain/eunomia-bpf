@@ -46,12 +46,11 @@ jobs:
     - name: build ecc
       run:  cd compiler && make
 
-    - name: Upload output file
+    - name: upload ecc artifact file
       uses: actions/upload-artifact@v3
       with:
         name: ecc
         path: ./compiler/workspace/bin/ecc
-
 
   # define job to build and publish docker image
   build-and-push-docker-image:
@@ -61,6 +60,9 @@ jobs:
     needs: [ "build-ecc" ]
     # steps to perform in job
     steps:
+      - name: Install wask sdk
+        run: make -C ./compiler wasi-sdk
+      
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -83,16 +85,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: mkdir dir
-        run: mkdir -p ./compiler/workspace/bin
+        run: mkdir -p ./compiler/workspace/bin && make -C ./compiler wasi-sdk
 
-      - name: Download a single artifact
+      - name: Download ecc artifact
         uses: actions/download-artifact@v3
         with:
           name: ecc
           path: ./compiler/workspace/bin/
-      
-      - name: output current dir info
-        run: pwd && ls -alF ./compiler/workspace/bin/ecc
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
