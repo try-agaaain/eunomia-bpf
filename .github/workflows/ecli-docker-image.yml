@@ -75,11 +75,8 @@ jobs:
           context: ./ecli
           # Note: tags has to be all lower-case
           platforms: linux/amd64,linux/arm64
-          tags: |
-            user/app:latest
-            user/app:1.0.0
-            ghcr.io/user/app:latest
-            ghcr.io/user/app:1.0.0
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           # build on feature branches, push only on main branch
           # push: ${{ github.ref == 'refs/heads/main' }}
           push: true

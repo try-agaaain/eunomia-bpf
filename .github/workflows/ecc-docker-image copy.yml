@@ -107,12 +107,9 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./compiler
           # Note: tags has to be all lower-case
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            user/app:latest
-            user/app:1.0.0
-            ghcr.io/user/app:latest
-            ghcr.io/user/app:1.0.0
+          platforms: linux/amd64,linux/386
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
             
           # build on feature branches, push only on main branch
           push: true
