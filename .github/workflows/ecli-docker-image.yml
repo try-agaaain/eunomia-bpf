@@ -33,20 +33,22 @@ jobs:
 
     - name: make ecli
       run:  make ecli
+    
+    - name: pwd info
+      run: pwd && ls ${{ github.workspace }}/ecli/build/bin/Release/
+
+    - name: upload ecli artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ecli
+        path: ${{ github.workspace }}/ecli/build/bin/Release/
 
     - name: run unit tests
       run: |
         cd ecli
         make test
 
-    - name: pwd info
-      run: pwd
-      
-    - name: upload ecli artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: ecli
-        path: ${{ github.workspace }}/ecli/build/bin/Release/
+
 
   # define job to build and publish docker image
   build-and-push-docker-image:
