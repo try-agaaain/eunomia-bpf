@@ -13,7 +13,7 @@ COPY ./. /usr/local/src
 RUN ls -a .
 
 RUN mkdir /usr/local/src/bin
-COPY ../my-ecc /usr/local/src/bin/ecc
+# COPY ../my-ecc /usr/local/src/bin/ecc
 RUN tar -zxf wasi-sdk-16.0-linux.tar.gz && mkdir /opt/wasi-sdk/ && mv wasi-sdk-16.0/* /opt/wasi-sdk/
 
 VOLUME /data/
