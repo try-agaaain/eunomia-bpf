@@ -53,9 +53,6 @@ jobs:
       with:
         sarif_file: compiler/cmd/rust-clippy-results.sarif
         wait-for-processing: true
-  
-    - name: output current dir info
-      run: pwd && ls
 
     - name: Upload output file
       uses: actions/upload-artifact@v3
@@ -94,12 +91,15 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GIT_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
           name: my-ecc
+      
+      - name: output current dir info
+        run: pwd && ls && echo "\n" && ls ..
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
