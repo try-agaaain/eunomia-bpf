@@ -75,7 +75,7 @@ jobs:
           context: ./compiler
           # Note: tags has to be all lower-case
           tags: |
-            ghcr.io/eunomia-bpf/ecc-`uname -m`:latest
+            ghcr.io/temp/my-ecc:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
