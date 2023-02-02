@@ -108,8 +108,7 @@ jobs:
           context: ./compiler
           # Note: tags has to be all lower-case
           platforms: linux/amd64,linux/386
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: my-ecc
             
           # build on feature branches, push only on main branch
           push: true

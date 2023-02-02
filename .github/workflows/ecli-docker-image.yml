@@ -75,8 +75,7 @@ jobs:
           context: ./ecli
           # Note: tags has to be all lower-case
           platforms: linux/amd64,linux/arm64
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: my-ecli
           # build on feature branches, push only on main branch
           # push: ${{ github.ref == 'refs/heads/main' }}
           push: true
