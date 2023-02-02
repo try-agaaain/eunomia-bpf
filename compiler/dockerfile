@@ -15,7 +15,7 @@ COPY ./workspace/bin/ecc /usr/bin/
 
 RUN wget --no-check-certificate https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-17/wasi-sdk-17.0-linux.tar.gz && \
 	tar -zxf wasi-sdk-17.0-linux.tar.gz && \
-	sudo mkdir -p /opt/wasi-sdk/ && sudo mv wasi-sdk-17.0/* /opt/wasi-sdk/
+	mkdir -p /opt/wasi-sdk/ && mv wasi-sdk-17.0/* /opt/wasi-sdk/
 
 VOLUME /data/
 
