@@ -44,24 +44,13 @@ jobs:
         key: ${{ runner.os }}-dependencies
 
     - name: build ecc
-      run:  cd compiler && make && make install
-
-    - name: test ecc
-      run:  cd compiler && make test
-    - name: Upload analysis results to GitHub
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: compiler/cmd/rust-clippy-results.sarif
-        wait-for-processing: true
+      run:  cd compiler && make
 
     - name: Upload output file
       uses: actions/upload-artifact@v3
       with:
-        name: my-ecc
+        name: ecc
         path: ./compiler/workspace/bin/ecc
-
-    - name: Code coverage using Codecov
-      run: bash <(curl -s https://codecov.io/bash)
 
 
   # define job to build and publish docker image
@@ -93,14 +82,17 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: mkdir dir
+        run: mkdir -p ./compiler/workspace/bin
+
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with:
-          name: my-ecc
-          path: /home/runner/work/eunomia-bpf/eunomia-bpf
+          name: ecc
+          path: ./compiler/workspace/bin/
       
-      # - name: output current dir info
-      #   run: pwd && ls && echo "\n" && ls /home/runner/work/eunomia-bpf/eunomia-bpf && ls my-ecc
+      - name: output current dir info
+        run: pwd && ls -alF ./compiler/workspace/bin/ecc
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
