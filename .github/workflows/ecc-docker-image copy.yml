@@ -94,8 +94,7 @@ jobs:
           context: ./compiler
           # Note: tags has to be all lower-case
           tags: |
-            oskardudycz/eventsourcing.nodejs.simple:latest 
-            ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
+            ghcr.io/eunomia-bpf/ecc-`uname -m`:latest
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
