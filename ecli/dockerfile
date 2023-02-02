@@ -12,6 +12,7 @@ RUN apt-get update && \
 	apt-get install libcurl4-openssl-dev libelf-dev clang llvm -y
 
 COPY ./build/bin/Release/ecli /usr/bin/
+RUN chmod +x /usr/bin/ecli
 
 #CMD ./ecli run /root/my/package.json
 CMD ["/bin/bash"]
