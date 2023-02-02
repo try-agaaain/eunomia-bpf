@@ -46,3 +46,9 @@ jobs:
       run: |
         cd ecli
         make test
+    
+    - name: Upload output file
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-ecli
+        path: ./build/bin/Release/ecli
