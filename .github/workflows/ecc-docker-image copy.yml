@@ -61,7 +61,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: my-ecc
-        path: ./workspace/bin/ecc
+        path: ./compiler/workspace/bin/ecc
 
     - name: Code coverage using Codecov
       run: bash <(curl -s https://codecov.io/bash)
