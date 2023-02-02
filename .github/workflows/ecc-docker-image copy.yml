@@ -60,8 +60,6 @@ jobs:
     needs: [ "build-ecc" ]
     # steps to perform in job
     steps:
-      - name: Install wask sdk
-        run: pwd && ls -alF &&make -C ${{ github.workspace }}/compiler wasi-sdk
       
       - name: Checkout code
         uses: actions/checkout@v3
