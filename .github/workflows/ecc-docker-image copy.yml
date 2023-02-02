@@ -108,7 +108,9 @@ jobs:
           context: ./compiler
           # Note: tags has to be all lower-case
           platforms: linux/amd64,linux/386
-          tags: my-ecc
+          tags: |
+            try-agaaain/eunomia-bpf.ecc:latest 
+            ghcr.io/try-agaaain/eunomia-bpf/ecc:latest
             
           # build on feature branches, push only on main branch
           push: true
