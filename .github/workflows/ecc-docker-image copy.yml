@@ -53,6 +53,10 @@ jobs:
       with:
         sarif_file: compiler/cmd/rust-clippy-results.sarif
         wait-for-processing: true
+  
+    - name: output current dir info
+      run: pwd && ls
+
     - name: Upload output file
       uses: actions/upload-artifact@v3
       with:
