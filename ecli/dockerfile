@@ -11,7 +11,7 @@ WORKDIR /root
 RUN apt-get update && \
 	apt-get install libcurl4-openssl-dev libelf-dev clang llvm -y
 
-COPY ./ecli/build/bin/ecli /usr/bin/
+COPY /usr/bin/ecli /usr/bin/
 
 #CMD ./ecli run /root/my/package.json
 CMD ["/bin/bash"]

@@ -79,14 +79,11 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: mkdir dir
-        run: mkdir -p ./ecli/build/bin
-
       - name: Download ecli artifact
         uses: actions/download-artifact@v3
         with:
           name: ecli
-          path: ./ecli/build/bin
+          path: /usr/bin
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
