@@ -1,12 +1,5 @@
 name: try depends
 
-on:
-  workflow_run:
-    workflows:
-      - Build and test compiler on Ubuntu
-    types:
-      - completed
-
 jobs:
   build-and-push-docker-image:
     name: Build Docker image and push to repositories
