@@ -39,11 +39,14 @@ jobs:
         cd ecli
         make test
 
+    - name: pwd info
+      run: pwd
+      
     - name: upload ecli artifact
       uses: actions/upload-artifact@v3
       with:
         name: ecli
-        path: ./ecli/build/bin/Release/
+        path: ${{ github.workspace }}/ecli/build/bin/Release/
 
   # define job to build and publish docker image
   build-and-push-docker-image:
