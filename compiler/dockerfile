@@ -10,9 +10,12 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends libelf1 libe
 
 COPY ./. /usr/local/src
 
-RUN mkdir /usr/local/src/bin
 COPY ./workspace/bin/ecc /usr/bin/
-COPY /opt/wasi-sdk/* /opt/wasi-sdk/
+# COPY /opt/wasi-sdk/* /opt/wasi-sdk/
+
+RUN wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-17/wasi-sdk-17.0-linux.tar.gz && \
+	tar -zxf wasi-sdk-17.0-linux.tar.gz && \
+	sudo mkdir -p /opt/wasi-sdk/ && sudo mv wasi-sdk-17.0/* /opt/wasi-sdk/
 
 VOLUME /data/
 
