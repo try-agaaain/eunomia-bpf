@@ -97,6 +97,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: my-ecc
+          path: /home/runner/work/eunomia-bpf/eunomia-bpf
       
       # - name: output current dir info
       #   run: pwd && ls && echo "\n" && ls /home/runner/work/eunomia-bpf/eunomia-bpf && ls my-ecc
