@@ -74,7 +74,6 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./ecli
           # Note: tags has to be all lower-case
-          platforms: linux/amd64,linux/arm64
           tags: |
             try-agaaain/eunomia-bpf.ecli:latest 
             ghcr.io/try-agaaain/eunomia-bpf/ecli:latest

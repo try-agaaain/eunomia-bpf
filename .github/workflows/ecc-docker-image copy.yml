@@ -98,8 +98,8 @@ jobs:
         with:
           name: my-ecc
       
-      - name: output current dir info
-        run: pwd && ls && echo "\n" && ls /home/runner/work/eunomia-bpf/eunomia-bpf && ls my-ecc
+      # - name: output current dir info
+      #   run: pwd && ls && echo "\n" && ls /home/runner/work/eunomia-bpf/eunomia-bpf && ls my-ecc
 
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
@@ -107,7 +107,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./compiler
           # Note: tags has to be all lower-case
-          platforms: linux/amd64,linux/386
+          platforms: linux/amd64,linux/arm64
           tags: |
             try-agaaain/eunomia-bpf.ecc:latest 
             ghcr.io/try-agaaain/eunomia-bpf/ecc:latest

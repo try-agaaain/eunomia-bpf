@@ -6,7 +6,7 @@ COPY ./ /root
 
 WORKDIR /root
 
-ADD sources.list $UBUNTU_SOURCE/
+# ADD sources.list $UBUNTU_SOURCE/
 
 RUN apt-get update && \
     apt-get -y install gcc libelf-dev
