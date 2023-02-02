@@ -1,11 +1,15 @@
-FROM alpine:latest
+FROM ubuntu:latest
+
+ENV UBUNTU_SOURCE /etc/apt
 
 COPY ./ /root
 
 WORKDIR /root
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-    apk update && \
-    apk install gcc libelf gcompat
+ADD sources.list $UBUNTU_SOURCE/
+
+RUN apt-get update && \
+    apt-get -y install gcc libelf-dev
 
 #CMD ./ecli run /root/my/package.json
+CMD ["/bin/bash"]
