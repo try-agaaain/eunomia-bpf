@@ -110,8 +110,7 @@ jobs:
           # Note: tags has to be all lower-case
           platforms: linux/amd64,linux/arm64
           tags: |
-            try-agaaain/eunomia-bpf.ecc:latest 
-            ghcr.io/try-agaaain/eunomia-bpf/ecc:latest
+            ghcr.io/try-agaaain/ecc:latest
             
           # build on feature branches, push only on main branch
           push: true

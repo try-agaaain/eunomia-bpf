@@ -75,8 +75,7 @@ jobs:
           context: ./ecli
           # Note: tags has to be all lower-case
           tags: |
-            try-agaaain/eunomia-bpf.ecli:latest 
-            ghcr.io/try-agaaain/eunomia-bpf/ecli:latest
+            ghcr.io/try-agaaain/ecc:latest
           # build on feature branches, push only on main branch
           # push: ${{ github.ref == 'refs/heads/main' }}
           push: true
