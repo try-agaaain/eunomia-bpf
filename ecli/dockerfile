@@ -22,7 +22,7 @@ RUN git clone --recurse-submodules https://github.com/eunomia-bpf/eunomia-bpf.gi
 	cd eunomia-bpf	&& \
 	make bpf-loader	&& \
 	make ecli	&& \
-	cp build/bin/Release/ecli /usr/bin/	&& \
+	cp eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/	&& \
 	chmod +x /usr/bin/ecli
 
 #CMD ecli run /root/my/package.json
