@@ -9,11 +9,14 @@ RUN apt-get update -y && \
 		zlib1g-dev clang llvm libclang-13-dev make cmake git  wget tar && \
 	apt-get clean && \
 	curl https://sh.rustup.rs -sSf | sh -s	&& \
-	rm -rf /var/lib/apt/lists/*
+	rm -rf /var/lib/apt/lists/*	&& \
+	apt upgrade	&& \
+	apt-get install --reinstall ca-certificates	&& \
+	update-ca-certificates
 
-RUN openssl s_client -showcerts -servername github.com -connect github.com:443 </dev/null 2>/dev/null \
-	| sed -n -e '/BEGIN\ CERTIFICATE/,/END\ CERTIFICATE/ p'  > github-com.pem	&& \
-	cat github-com.pem | tee -a /etc/ssl/certs/ca-certificates.crt
+# RUN openssl s_client -showcerts -servername github.com -connect github.com:443 </dev/null 2>/dev/null \
+# 	| sed -n -e '/BEGIN\ CERTIFICATE/,/END\ CERTIFICATE/ p'  > github-com.pem	&& \
+# 	cat github-com.pem | tee -a /etc/ssl/certs/ca-certificates.crt
 
 RUN git clone --recurse-submodules https://github.com/eunomia-bpf/eunomia-bpf.git	&& \
 	cd eunomia-bpf	&& \
