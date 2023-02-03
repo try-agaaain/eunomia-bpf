@@ -6,7 +6,7 @@ WORKDIR /root
 
 RUN apt-get update -y && \
 	apt-get install -y --no-install-recommends libelf1 libelf-dev \
-		zlib1g-dev clang llvm libclang-13-dev make cmake git  wget tar && \
+		zlib1g-dev clang llvm libclang-13-dev make cmake git  wget tar tree && \
 	apt-get clean && \
 	curl https://sh.rustup.rs -sSf | sh -s	&& \
 	rm -rf /var/lib/apt/lists/*	&& \
@@ -21,8 +21,10 @@ RUN apt-get update -y && \
 RUN git clone --recurse-submodules https://github.com/eunomia-bpf/eunomia-bpf.git	&& \
 	cd eunomia-bpf	&& \
 	make bpf-loader	&& \
-	make ecli	&& \
-	cp eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/	&& \
+	make ecli
+
+RUN	tree -L 2 /root/eunomia-bpf/ecli/build	&& \
+	cp /root/eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/	&& \
 	chmod +x /usr/bin/ecli
 
 #CMD ecli run /root/my/package.json
