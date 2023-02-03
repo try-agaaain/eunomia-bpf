@@ -10,8 +10,8 @@ RUN apt-get update -y && \
 	apt-get clean && \
 	curl https://sh.rustup.rs -sSf | sh -s	&& \
 	rm -rf /var/lib/apt/lists/*	&& \
-	apt upgrade	&& \
-	apt-get install --reinstall ca-certificates	&& \
+	apt-get update	&& \
+	apt-get install -y ca-certificates	&& \
 	update-ca-certificates
 
 # RUN openssl s_client -showcerts -servername github.com -connect github.com:443 </dev/null 2>/dev/null \
