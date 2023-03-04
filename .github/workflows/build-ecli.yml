@@ -39,7 +39,7 @@ jobs:
             apt-get install -y --no-install-recommends ca-certificates	&& \
             update-ca-certificates	&& \
             apt-get clean && \
-            curl https://sh.rustup.rs -sSf | sh -s	&& \
+            curl https://sh.rustup.rs -sSf | sh -s -y	&& \
             rm -rf /var/lib/apt/lists/*
             mkdir /src && cd /src
             git submodule update --init --recursive --remote
