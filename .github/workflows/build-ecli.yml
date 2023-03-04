@@ -42,6 +42,7 @@ jobs:
             curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
             rm -rf /var/lib/apt/lists/*
             mkdir /src && cd /src
+            git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
             git submodule update --init --recursive --remote
             make bpf-loader && make ecli
 
