@@ -68,7 +68,7 @@ $(ECC): $(BPFTOOL)
 	cp $(BPFTOOL) workspace/bin/bpftool
 	cp -r $(BPFTOOL_SRC)/src/libbpf/include/bpf workspace/include/bpf
 	cp -r ../third_party/vmlinux workspace/include/vmlinux
-	cd cmd && cargo build --release
+	cd cmd && cargo build --release -v
 	cp $(ECC) workspace/bin/ecc
 	# cp -r ../wasm-runtime/scripts workspace/scripts
 

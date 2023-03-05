@@ -15,7 +15,7 @@ $(LIBWASM_BPF):
 install: $(LIBEUNOMIA) $(LIBWASM_BPF)## install the package to the `INSTALL_LOCATION`
 	mkdir -p ../wasm-runtime/include/wasm-bpf
 	rm -rf target/
-	cargo build --release
+	cargo build --release -v
 	mkdir -p ~/.eunomia/bin
 	cp ./target/release/ecli ~/.eunomia/bin/ecli
 
