@@ -35,7 +35,7 @@ jobs:
             echo "my info: " `uname -a`
             apt-get update && \
             apt-get install -y --no-install-recommends libelf1 libelf-dev \
-                zlib1g-dev clang llvm libclang-13-dev make cmake git wget tar curl && \
+                zlib1g-dev clang llvm libclang-13-dev make cmake git cargo wget tar curl && \
             apt-get install -y --no-install-recommends ca-certificates	&& \
             update-ca-certificates	&& \
             apt-get clean && \
