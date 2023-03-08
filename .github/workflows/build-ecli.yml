@@ -1,5 +1,8 @@
-on: [push, pull_request]
-
+on:
+  push:
+    branches: "*"
+    paths:
+      - "VERSION"
 jobs:
   build_job:
     # The host should always be linux
