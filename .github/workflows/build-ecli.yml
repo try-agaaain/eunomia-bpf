@@ -45,7 +45,7 @@ jobs:
             curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
             rm -rf /var/lib/apt/lists/*
             mkdir /src && cd /src
-            git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
+            git clone https://github.com/eunomia-bpf/eunomia-bpf.git -b image-try && cd eunomia-bpf
             git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
             cd ecli && make install
