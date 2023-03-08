@@ -53,7 +53,7 @@ clean: ## clean all build projects
 
 eunomia-exporter: ## build the exporter for custom metric
 	make -C bpf-loader
-	cd eunomia-exporter && cargo build --release
+	cd eunomia-exporter && cargo build --release -v
 
 release:
 	make -C ecli install
