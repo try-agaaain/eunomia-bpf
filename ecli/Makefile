@@ -7,7 +7,7 @@ build: $(LIBEUNOMIA) $(LIBWASM_BPF)
 	# cargo build --release -v
 
 $(LIBEUNOMIA):
-	$(MAKE) -C ../bpf-loader install
+	# $(MAKE) -C ../bpf-loader install
 	echo "my info: bpf-loader install is done"
 
 $(LIBWASM_BPF):
