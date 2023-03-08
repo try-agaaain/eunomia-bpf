@@ -11,8 +11,8 @@ $(LIBEUNOMIA):
 	echo "my info: bpf-loader install is done"
 
 $(LIBWASM_BPF):
-	mkdir -p ../wasm-runtime/include/wasm-bpf
-	$(MAKE) -C ../wasm-runtime build-cpp
+	# mkdir -p ../wasm-runtime/include/wasm-bpf
+	# $(MAKE) -C ../wasm-runtime build-cpp
 	echo "my info: wasm-bpf install is done"
 
 install: $(LIBEUNOMIA) $(LIBWASM_BPF)## install the package to the `INSTALL_LOCATION`
