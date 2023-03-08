@@ -45,8 +45,6 @@ jobs:
             git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
             git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
-            make bpf-loader 
-            echo "my info: make bpf-loader is finished!"
             make ecli
 
           # Pass some environment variables to the container

@@ -7,14 +7,17 @@ build: $(LIBEUNOMIA) $(LIBWASM_BPF)
 
 $(LIBEUNOMIA):
 	$(MAKE) -C ../bpf-loader install
+	echo "my info: bpf-loader install is done"
 
 $(LIBWASM_BPF):
 	mkdir -p ../wasm-runtime/include/wasm-bpf
 	$(MAKE) -C ../wasm-runtime build-cpp
+	echo "my info: wasm-bpf install is done"
 
 install: $(LIBEUNOMIA) $(LIBWASM_BPF)## install the package to the `INSTALL_LOCATION`
 	mkdir -p ../wasm-runtime/include/wasm-bpf
 	rm -rf target/
+	echo "my info: begin cargo build"
 	cargo build --release -v
 	mkdir -p ~/.eunomia/bin
 	cp ./target/release/ecli ~/.eunomia/bin/ecli
