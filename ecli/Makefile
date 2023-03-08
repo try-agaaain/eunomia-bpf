@@ -3,6 +3,7 @@ LIBWASM_BPF := ../wasm-runtime/build/libwasm-bpf_LIB.a
 
 .PHONY: build
 build: $(LIBEUNOMIA) $(LIBWASM_BPF)
+	echo "my info: begin cargo build"
 	cargo build --release -v
 
 $(LIBEUNOMIA):
