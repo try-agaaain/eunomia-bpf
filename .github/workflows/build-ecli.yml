@@ -24,27 +24,27 @@ jobs:
           # Not required, but speeds up builds
           githubToken: ${{ github.token }}
 
-          # Create an artifacts directory
-          setup: |
-            echo "my info: " `uname -a`
+          # # Create an artifacts directory
+          # setup: |
+          #   echo "my info: " `uname -a`
 
-          # Mount the artifacts directory as /artifacts in the container
-          dockerRunArgs: |
-            -v /usr/bin/:/usr/bin/
+          # # Mount the artifacts directory as /artifacts in the container
+          # dockerRunArgs: |
+          #   -v /usr/bin/:/usr/bin/
           install: |
             echo "my info: " `uname -a`
-            apt-get update && \
-            apt-get install -y --no-install-recommends libelf1 libelf-dev \
-                zlib1g-dev clang llvm libclang-13-dev make cmake git cargo wget tar curl && \
-            apt-get install -y --no-install-recommends ca-certificates	&& \
-            update-ca-certificates	&& \
-            apt-get clean && \
-            curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
-            rm -rf /var/lib/apt/lists/*
+          #   apt-get update && \
+          #   apt-get install -y --no-install-recommends libelf1 libelf-dev \
+          #       zlib1g-dev clang llvm libclang-13-dev make cmake git cargo wget tar curl && \
+          #   apt-get install -y --no-install-recommends ca-certificates	&& \
+          #   update-ca-certificates	&& \
+          #   apt-get clean && \
+          #   curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
+          #   rm -rf /var/lib/apt/lists/*
 
-          # Pass some environment variables to the container
-          env: | # YAML, but pipe character is necessary
-            artifact_name: git-${{ matrix.distro }}_${{ matrix.arch }}
+          # # Pass some environment variables to the container
+          # env: | # YAML, but pipe character is necessary
+          #   artifact_name: git-${{ matrix.distro }}_${{ matrix.arch }}
 
           # The shell to run commands with in the container
           shell: /bin/sh
@@ -52,10 +52,10 @@ jobs:
           # Produce a binary artifact and place it in the mounted volume
           run: |
             echo "my info: " `uname -a`
-            mkdir /src && cd /src
-            git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
-            git submodule update --init --recursive --remote
-            echo "my info: get the whole repo!"
-            make ecli
-            cp /src/eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/	&& \
-            chmod +x /usr/bin/ecli
+            # mkdir /src && cd /src
+            # git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
+            # git submodule update --init --recursive --remote
+            # echo "my info: get the whole repo!"
+            # make ecli
+            # cp /src/eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/	&& \
+            # chmod +x /usr/bin/ecli
