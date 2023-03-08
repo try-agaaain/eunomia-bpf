@@ -45,10 +45,7 @@ jobs:
             git clone https://github.com/eunomia-bpf/eunomia-bpf.git && cd eunomia-bpf
             git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
-            cd ecli && make build
-            rustc -V
-            cargo -V
-            cp /src/eunomia-bpf/ecli/build/bin/Release/ecli /usr/bin/
+            cd ecli && make install
 
           # Pass some environment variables to the container
           env: | # YAML, but pipe character is necessary
