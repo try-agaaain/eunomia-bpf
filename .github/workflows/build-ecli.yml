@@ -47,10 +47,11 @@ jobs:
             rm -rf /var/lib/apt/lists/*
             # mkdir /src && cd /src
             # git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
-            cd /sur/src/
+            cd /usr/src/
             # git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
             cd ecli && make build
+            cp /usr/src/ecli/target/release/ecli /usr/bin/
 
           # Pass some environment variables to the container
           env: | # YAML, but pipe character is necessary
