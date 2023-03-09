@@ -35,7 +35,7 @@ jobs:
 
           # Mount the artifacts directory as /artifacts in the container
           dockerRunArgs: |
-            -v /usr/bin/:/usr/bin/
+            -v /usr/bin/:/usr/bin/ -v `pwd`:/usr/src/
           install: |
             echo "my info: " `uname -a`
             apt-get update && \
@@ -46,9 +46,10 @@ jobs:
             apt-get clean && \
             curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
             rm -rf /var/lib/apt/lists/*
-            mkdir /src && cd /src
-            git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
-            git submodule update --init --recursive --remote
+            # mkdir /src && cd /src
+            # git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
+            cd /sur/src/
+            # git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
             cd ecli && make build
 
