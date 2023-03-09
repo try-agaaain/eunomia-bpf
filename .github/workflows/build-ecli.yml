@@ -44,7 +44,8 @@ jobs:
             apt-get install -y --no-install-recommends ca-certificates	&& \
             update-ca-certificates	&& \
             apt-get clean && \
-            source "$HOME/.cargo/env"
+            # source "$HOME/.cargo/env"
+            echo `cargo -V`
             curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
             rm -rf /var/lib/apt/lists/*
             # mkdir /src && cd /src
