@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: get submodule
         run:  git submodule update --init --recursive --remote
+      - name: pwd
+        run: pwd
       - uses: uraimo/run-on-arch-action@v2
         name: Build artifact
         id: build
