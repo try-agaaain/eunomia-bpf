@@ -36,7 +36,7 @@ jobs:
 
           # Mount the artifacts directory as /artifacts in the container
           dockerRunArgs: |
-            -v /usr/bin/:/usr/bin/ -v `pwd`:/usr/src/
+            -v /usr/bin/:/usr/bin/ -v /home/runner/work/eunomia-bpf/eunomia-bpf:/usr/src/
           install: |
             pwd
             ls -af /usr/src/
