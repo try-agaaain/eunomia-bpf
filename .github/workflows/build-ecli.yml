@@ -17,6 +17,8 @@ jobs:
             distro: ubuntu22.04
     steps:
       - uses: actions/checkout@v3
+      - name: get submodule
+        run:  git submodule update --init --recursive --remote
       - uses: uraimo/run-on-arch-action@v2
         name: Build artifact
         id: build
@@ -45,7 +47,7 @@ jobs:
             curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
             rm -rf /var/lib/apt/lists/*
             mkdir /src && cd /src
-            git clone https://github.com/eunomia-bpf/eunomia-bpf.git -b image-try && cd eunomia-bpf
+            git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
             git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
             cd ecli && make build
