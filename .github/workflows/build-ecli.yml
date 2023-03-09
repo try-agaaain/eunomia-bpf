@@ -49,6 +49,7 @@ jobs:
             # mkdir /src && cd /src
             # git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
             cd /usr/src/
+            ls -af
             # git submodule update --init --recursive --remote
             echo "my info: get the whole repo!"
             cd ecli && make build
