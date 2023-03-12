@@ -36,10 +36,9 @@ jobs:
 
           # Mount the artifacts directory as /artifacts in the container
           dockerRunArgs: |
-            -v /usr/bin/:/usr/bin/ -v /home/runner/work/eunomia-bpf/eunomia-bpf:/usr/temp
+            -v /home/runner/work/eunomia-bpf/eunomia-bpf:/usr/temp
           install: |
             pwd
-            ls -af /usr/temp/
             find / -name eunomia-bpf
             echo "my info: " `uname -a`
             apt-get update && \
