@@ -56,8 +56,7 @@ jobs:
             git submodule update --init --recursive --remote
             echo "my info: get the whole repo!" `pwd`
             pwd
-            cd /usr/src/ecli && make build
-            cp /usr/src/ecli/target/release/ecli /usr/bin/
+            make build && cp /usr/src/ecli/target/release/ecli /usr/bin/
 
           # Pass some environment variables to the container
           env: | # YAML, but pipe character is necessary
