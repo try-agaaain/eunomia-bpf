@@ -1,0 +1,71 @@
+on:
+  push:
+    branches: "*"
+
+jobs:
+  build_job:
+    # The host should always be linux
+    runs-on: ubuntu-22.04
+    name: Build on ${{ matrix.distro }} ${{ matrix.arch }}
+
+    # Run steps on a matrix of 4 arch/distro combinations
+    strategy:
+      matrix:
+        include:
+          - arch: aarch64
+            distro: ubuntu22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: get submodule
+        run:  git submodule update --init --recursive --remote
+      - name: pwd
+        run: pwd
+      - uses: uraimo/run-on-arch-action@v2
+        name: Build artifact
+        id: build
+        with:
+          arch: aarch64
+          distro: ubuntu22.04
+
+          # Not required, but speeds up builds
+          githubToken: ${{ github.token }}
+
+          # Create an artifacts directory
+          setup: |
+            echo "my info: " `uname -a`
+
+          # Mount the artifacts directory as /artifacts in the container
+          dockerRunArgs: |
+            -v /usr/bin/:/usr/bin/ -v /home/runner/work/eunomia-bpf/eunomia-bpf:/usr/src/
+          install: |
+            pwd
+            ls -af /usr/src/
+            echo "my info: " `uname -a`
+            apt-get update && \
+            apt-get install -y --no-install-recommends libelf1 libelf-dev \
+                zlib1g-dev clang llvm libclang-13-dev make cmake git cargo wget tar curl && \
+            apt-get install -y --no-install-recommends ca-certificates	&& \
+            update-ca-certificates	&& \
+            apt-get clean && \
+            # source "$HOME/.cargo/env"
+            echo `cargo -V`
+            curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
+            rm -rf /var/lib/apt/lists/*
+            cd /usr/src
+            git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
+            git submodule update --init --recursive --remote
+            echo "my info: get the whole repo!"
+            pwd
+            cd /usr/src/ecli && make build
+            cp /usr/src/ecli/target/release/ecli /usr/bin/
+
+          # Pass some environment variables to the container
+          env: | # YAML, but pipe character is necessary
+            artifact_name: git-${{ matrix.distro }}_${{ matrix.arch }}
+
+          # The shell to run commands with in the container
+          shell: /bin/sh
+
+          # Produce a binary artifact and place it in the mounted volume
+          run: |
+            ls -af /usr/bin/ecli
