@@ -54,7 +54,7 @@ jobs:
             cd /usr/src
             git clone https://github.com/try-agaaain/eunomia-bpf.git -b image-try && cd eunomia-bpf
             git submodule update --init --recursive --remote
-            echo "my info: get the whole repo!"
+            echo "my info: get the whole repo!" `pwd`
             pwd
             cd /usr/src/ecli && make build
             cp /usr/src/ecli/target/release/ecli /usr/bin/
