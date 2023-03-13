@@ -20,7 +20,7 @@ jobs:
           arch: armv7
           distro: ubuntu18.04
           dockerRunArgs: |
-            -v ~/eunomia-bpf:/usr/
+            -v ~/eunomia-bpf:/usr/eunomia-bpf
 
           # Not required, but speeds up builds by storing container images in
           # a GitHub package registry.
