@@ -9,7 +9,7 @@ $(LIBEUNOMIA):
 
 install: $(LIBEUNOMIA) ## install the package to the `INSTALL_LOCATION`
 	rm -rf target/
-	cargo build --release
+	cargo build --release -v
 	mkdir -p ~/.eunomia/bin
 	cp ./target/release/ecli ~/.eunomia/bin/ecli
 
