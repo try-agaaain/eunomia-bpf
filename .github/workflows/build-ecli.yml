@@ -29,8 +29,20 @@ jobs:
 
           # Set an output parameter `uname` for use in subsequent steps
           run: |
-            ls -af /usr/
-            ls -af /usr/eunomia-bpf
+            
+            
+            apt-get update
+            apt-get install -y --no-install-recommends libelf1 libelf-dev \
+                zlib1g-dev clang llvm libclang-13-dev make cmake git cargo wget tar curl
+            apt-get install -y --no-install-recommends ca-certificates
+            update-ca-certificates
+            apt-get clean
+            
+            curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
+            rm -rf /var/lib/apt/lists/*
+            cd /usr/eunomia-bpf/ecli
+            make build
+            
             uname -a
             echo ::set-output name=uname::$(uname -a)
 
@@ -38,3 +50,4 @@ jobs:
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           echo "The uname output was ${{ steps.runcmd.outputs.uname }}"
+          ls ~/code/eunomia-bpf/ecli
