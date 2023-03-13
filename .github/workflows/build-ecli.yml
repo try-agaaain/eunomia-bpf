@@ -1,10 +1,10 @@
 on: [push, pull_request]
 
 jobs:
-  armv7_job:
+  aarch64_job:
     # The host should always be Linux
-    runs-on: ubuntu-18.04
-    name: Build on ubuntu-18.04 armv7
+    runs-on: ubuntu-22.04
+    name: Build on ubuntu-22.04 aarch64
     steps:
       - uses: actions/checkout@v3
       - name: update remote
@@ -38,8 +38,10 @@ jobs:
             update-ca-certificates
             apt-get clean
             
-            curl https://sh.rustup.rs -sSf | sh -s -- -y	&& \
+            curl https://sh.rustup.rs -sSf | sh -s -- -y
+            source "$HOME/.cargo/env"
             rm -rf /var/lib/apt/lists/*
+            
             cd /usr/eunomia-bpf/ecli
             make build
             
