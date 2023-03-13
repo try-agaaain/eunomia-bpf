@@ -10,8 +10,9 @@ jobs:
       - name: touch a file
         run: |
           git submodule update --init --recursive --remote
-          cp -r ../eunomia-bpf ~/
-          ls -af ~/eunomia-bpf
+          mkdir ~/code
+          cp -r ../eunomia-bpf ~/code/
+          ls -af ~/code/eunomia-bpf
 
       - uses: uraimo/run-on-arch-action@v2
         name: Run commands
@@ -20,7 +21,7 @@ jobs:
           arch: armv7
           distro: ubuntu18.04
           dockerRunArgs: |
-            -v ~/eunomia-bpf:/usr/eunomia-bpf
+            -v ~/code/eunomia-bpf:/usr/eunomia-bpf
 
           # Not required, but speeds up builds by storing container images in
           # a GitHub package registry.
