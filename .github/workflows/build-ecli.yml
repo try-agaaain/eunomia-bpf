@@ -7,7 +7,7 @@ jobs:
     name: Build on ubuntu-18.04 armv7
     steps:
       - uses: actions/checkout@v3
-      - name: touch a file
+      - name: update remote
         run: |
           git submodule update --init --recursive --remote
           mkdir ~/code
@@ -18,8 +18,8 @@ jobs:
         name: Run commands
         id: runcmd
         with:
-          arch: armv7
-          distro: ubuntu18.04
+          arch: aarch64
+          distro: ubuntu22.04
           dockerRunArgs: |
             -v ~/code/eunomia-bpf:/usr/eunomia-bpf
 
