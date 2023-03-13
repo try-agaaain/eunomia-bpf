@@ -10,7 +10,7 @@ jobs:
       - name: touch a file
         run: |
           git submodule update --init --recursive --remote
-          cp ../eunomia-bpf ~/
+          cp -r ../eunomia-bpf ~/
           ls -af ~/eunomia-bpf
 
       - uses: uraimo/run-on-arch-action@v2
