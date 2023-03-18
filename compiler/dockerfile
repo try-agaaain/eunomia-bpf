@@ -21,7 +21,7 @@ RUN wget --progress=dot:giga --no-check-certificate \
 
 RUN cp /usr/bin/python2 /usr/bin/python
 
-RUN cargo config net.git-fetch-with-cli true
+RUN cargo --config "net.git-fetch-with-cli = true"
 RUN make ecc
 RUn rm -rf compiler/cmd/target
 
