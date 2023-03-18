@@ -21,8 +21,8 @@ RUN wget --progress=dot:giga --no-check-certificate \
 
 RUN cp /usr/bin/python2 /usr/bin/python
 
-RUN make ecc    && \
-    make -C compiler install    && \
+RUN export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+	make ecc    && \
     rm -rf compiler/cmd/target
 
 WORKDIR /usr/local/src/compiler
