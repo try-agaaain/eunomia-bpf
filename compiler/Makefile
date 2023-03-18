@@ -69,7 +69,7 @@ $(ECC): $(BPFTOOL)
 	cp -r $(BPFTOOL_SRC)/src/libbpf/include/bpf workspace/include/bpf
 	cp -r ../third_party/vmlinux workspace/include/vmlinux
 	export CARGO_NET_GIT_FETCH_WITH_CLI=true
-	cd cmd && cargo build --release
+	cd cmd && cargo build --release --config net.git-fetch-with-cli=true
 	cp $(ECC) workspace/bin/ecc
 	# cp -r ../wasm-runtime/scripts workspace/scripts
 
