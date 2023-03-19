@@ -21,9 +21,8 @@ RUN wget --progress=dot:giga --no-check-certificate \
 
 RUN cp /usr/bin/python2 /usr/bin/python
 
-RUN cargo config get -Z unstable-options --config net.git-fetch-with-cli=true && \
-	export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
-	make ecc
+RUN export CARGO_NET_GIT_FETCH_WITH_CLI=true && \
+    make ecc
 RUn rm -rf compiler/cmd/target
 
 WORKDIR /usr/local/src/compiler
