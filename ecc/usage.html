@@ -83,16 +83,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../introduction/introduction.html"><strong aria-hidden="true">1.1.</strong> Detail introduction</a></li><li class="chapter-item "><a href="../wasm-bpf.html"><strong aria-hidden="true">1.2.</strong> Wasm-bpf subproject</a></li></ol></li><li class="chapter-item "><li class="part-title">User Manual</li><li class="chapter-item "><a href="../quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../installation/index.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item "><a href="../installation/build.html"><strong aria-hidden="true">2.2.</strong> Build</a></li><li class="chapter-item "><a href="../installation/build-android-arm.html"><strong aria-hidden="true">2.3.</strong> Build on Android or ARM</a></li></ol></li><li class="chapter-item expanded "><a href="../ecc/index.html"><strong aria-hidden="true">3.</strong> ecc</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ecc/usage.html" class="active"><strong aria-hidden="true">3.1.</strong> usage</a></li><li class="chapter-item "><a href="../ecc/docker-usage.html"><strong aria-hidden="true">3.2.</strong> docker</a></li><li class="chapter-item "><a href="../ecc/github-template.html"><strong aria-hidden="true">3.3.</strong> template</a></li><li class="chapter-item "><a href="../ecc/config-lua-depreciate.html"><strong aria-hidden="true">3.4.</strong> lua</a></li></ol></li><li class="chapter-item "><a href="../ecli/index.html"><strong aria-hidden="true">4.</strong> ecli</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ecli/docker.html"><strong aria-hidden="true">4.1.</strong> docker</a></li></ol></li><li class="chapter-item "><a href="../bpf-loader/index.html"><strong aria-hidden="true">5.</strong> bpf-loader</a></li><li class="chapter-item "><a href="../ecli-dockerfile-usage.html"><strong aria-hidden="true">6.</strong> Docker manual</a></li><li class="chapter-item "><a href="../mannual.html"><strong aria-hidden="true">7.</strong> Manual (Chinese)</a></li><li class="chapter-item "><a href="../online.html"><strong aria-hidden="true">8.</strong> Online Demo</a></li><li class="chapter-item "><a href="../common_problems.html"><strong aria-hidden="true">9.</strong> Common problems</a></li><li class="chapter-item "><a href="../supporting-external-BTF.html"><strong aria-hidden="true">10.</strong> External BTF support</a></li><li class="chapter-item "><a href="../benchmark.html"><strong aria-hidden="true">11.</strong> Benchmark</a></li><li class="chapter-item affix "><li class="part-title">Videos</li><li class="chapter-item "><a href="../video.html"><strong aria-hidden="true">12.</strong> Public talk video</a></li><li class="chapter-item affix "><li class="part-title">Blogs</li><li class="chapter-item "><a href="../blog/index.html"><strong aria-hidden="true">13.</strong> Blogs (Chinese)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../blog/introduce-to-wasm-bpf-bpf-community.html"><strong aria-hidden="true">13.1.</strong> Wasm-bpf: 架起 Webassembly 和 eBPF 内核可编程的桥梁</a></li><li class="chapter-item "><a href="../blog/how-to-write-c-in-wasm.html"><strong aria-hidden="true">13.2.</strong> 在 WebAssembly 中使用 C/C++ 和 libbpf 编写 eBPF 程序</a></li><li class="chapter-item "><a href="../blog/how-to-write-rust-in-wasm.html"><strong aria-hidden="true">13.3.</strong> 在 WebAssembly 中使用 Rust 编写 eBPF 程序并发布 OCI 镜像</a></li><li class="chapter-item "><a href="../blog/GPTtrace.html"><strong aria-hidden="true">13.4.</strong> 使用 ChatGPT ，通过自然语言编写 eBPF 程序和追踪 Linux 系统</a></li><li class="chapter-item "><a href="../blog/ebpf-wasm.html"><strong aria-hidden="true">13.5.</strong> 当 Wasm 遇见 eBPF ：使用 WebAssembly 编写、分发、加载运行 eBPF 程序</a></li><li class="chapter-item "><a href="../blog/lmp-eunomia.html"><strong aria-hidden="true">13.6.</strong> 如何在 Linux 显微镜（LMP）项目中开启 eBPF 之旅</a></li><li class="chapter-item "><a href="../blog/0.3.0-release.html"><strong aria-hidden="true">13.7.</strong> eunomia-bpf 0.3.0 发布：只需编写内核态代码，轻松构建、打包、发布完整的 eBPF 应用</a></li><li class="chapter-item "><a href="../blog/coolbpf-eunomia.html"><strong aria-hidden="true">13.8.</strong> eunomia-bpf：展望 2023，让 eBPF 插上 Wasm 的翅膀</a></li><li class="chapter-item "><a href="../blog/bpf-news.html"><strong aria-hidden="true">13.9.</strong> eBPF 进阶: 内核新特性进展一览</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../introduction/introduction.html"><strong aria-hidden="true">1.1.</strong> Detail introduction</a></li><li class="chapter-item "><a href="../wasm-bpf.html"><strong aria-hidden="true">1.2.</strong> Wasm-bpf subproject</a></li></ol></li><li class="chapter-item "><li class="part-title">User Manual</li><li class="chapter-item "><a href="../quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../installation/index.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item "><a href="../installation/build.html"><strong aria-hidden="true">2.2.</strong> Build</a></li><li class="chapter-item "><a href="../installation/build-android-arm.html"><strong aria-hidden="true">2.3.</strong> Build on Android or ARM</a></li></ol></li><li class="chapter-item expanded "><a href="../ecc/index.html"><strong aria-hidden="true">3.</strong> ecc</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ecc/usage.html" class="active"><strong aria-hidden="true">3.1.</strong> usage</a></li><li class="chapter-item "><a href="../ecc/docker-usage.html"><strong aria-hidden="true">3.2.</strong> docker</a></li><li class="chapter-item "><a href="../ecc/github-template.html"><strong aria-hidden="true">3.3.</strong> template</a></li><li class="chapter-item "><a href="../ecc/config-lua-depreciate.html"><strong aria-hidden="true">3.4.</strong> lua</a></li></ol></li><li class="chapter-item "><a href="../ecli/index.html"><strong aria-hidden="true">4.</strong> ecli</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ecli/docker.html"><strong aria-hidden="true">4.1.</strong> docker</a></li></ol></li><li class="chapter-item "><a href="../ecli-dockerfile-usage.html"><strong aria-hidden="true">5.</strong> Docker manual</a></li><li class="chapter-item "><a href="../mannual.html"><strong aria-hidden="true">6.</strong> Manual (Chinese)</a></li><li class="chapter-item "><a href="../online.html"><strong aria-hidden="true">7.</strong> Online Demo</a></li><li class="chapter-item "><a href="../common_problems.html"><strong aria-hidden="true">8.</strong> Common problems</a></li><li class="chapter-item "><a href="../supporting-external-BTF.html"><strong aria-hidden="true">9.</strong> External BTF support</a></li><li class="chapter-item "><a href="../benchmark.html"><strong aria-hidden="true">10.</strong> Benchmark</a></li><li class="chapter-item affix "><li class="part-title">Videos</li><li class="chapter-item "><a href="../video.html"><strong aria-hidden="true">11.</strong> Public talk video</a></li><li class="chapter-item affix "><li class="part-title">Blogs</li><li class="chapter-item "><a href="../blog/index.html"><strong aria-hidden="true">12.</strong> Blogs (Chinese)</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../blog/introduce-to-wasm-bpf-bpf-community.html"><strong aria-hidden="true">12.1.</strong> Wasm-bpf: 架起 Webassembly 和 eBPF 内核可编程的桥梁</a></li><li class="chapter-item "><a href="../blog/how-to-write-c-in-wasm.html"><strong aria-hidden="true">12.2.</strong> 在 WebAssembly 中使用 C/C++ 和 libbpf 编写 eBPF 程序</a></li><li class="chapter-item "><a href="../blog/how-to-write-rust-in-wasm.html"><strong aria-hidden="true">12.3.</strong> 在 WebAssembly 中使用 Rust 编写 eBPF 程序并发布 OCI 镜像</a></li><li class="chapter-item "><a href="../blog/GPTtrace.html"><strong aria-hidden="true">12.4.</strong> 使用 ChatGPT ，通过自然语言编写 eBPF 程序和追踪 Linux 系统</a></li><li class="chapter-item "><a href="../blog/ebpf-wasm.html"><strong aria-hidden="true">12.5.</strong> 当 Wasm 遇见 eBPF ：使用 WebAssembly 编写、分发、加载运行 eBPF 程序</a></li><li class="chapter-item "><a href="../blog/lmp-eunomia.html"><strong aria-hidden="true">12.6.</strong> 如何在 Linux 显微镜（LMP）项目中开启 eBPF 之旅</a></li><li class="chapter-item "><a href="../blog/0.3.0-release.html"><strong aria-hidden="true">12.7.</strong> eunomia-bpf 0.3.0 发布：只需编写内核态代码，轻松构建、打包、发布完整的 eBPF 应用</a></li><li class="chapter-item "><a href="../blog/coolbpf-eunomia.html"><strong aria-hidden="true">12.8.</strong> eunomia-bpf：展望 2023，让 eBPF 插上 Wasm 的翅膀</a></li><li class="chapter-item "><a href="../blog/bpf-news.html"><strong aria-hidden="true">12.9.</strong> eBPF 进阶: 内核新特性进展一览</a></li><li class="chapter-item "><a href="../blog/test-for-Android.html"><strong aria-hidden="true">12.10.</strong> ecli 在安卓 13 上的运行测试</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -187,42 +209,22 @@ of existing distributions and their current status on eBPF and BTF support.</p>
 </ul>
 <h4 id="options"><a class="header" href="#options">Options</a></h4>
 <ul>
-<li>
-<p>-o, --output-path <code>OUTPUT_PATH</code>: path of output bpf object</p>
-</li>
-<li>
-<p>-w, --workspace-path <code>WORKSPACE_PATH</code>: specify custom workspace path </p>
-</li>
-<li>
-<p>-a, --additional-cflags <code>ADDITIONAL_CFLAGS</code>: additional cflags for clang</p>
+<li>-o, --output-path <code>OUTPUT_PATH</code>: path of output bpf object</li>
+<li>-w, --workspace-path <code>WORKSPACE_PATH</code>: specify custom workspace path</li>
+<li>-a, --additional-cflags <code>ADDITIONAL_CFLAGS</code>: additional cflags for clang
 <ul>
 <li>example <code>-a=&quot;-fstack-protector&quot;</code>,
 this avoids runtime errors on some distributions that have clang stack protection enabled by default.</li>
 </ul>
 </li>
-<li>
-<p>-c, --clang-bin <code>CLANG_BIN</code>: path of clang binary (default: clang)</p>
-</li>
-<li>
-<p>-l, --llvm-strip-bin <code>LLVM_STRIP_BIN</code>: path of llvm-strip binary (default: llvm-strip)</p>
-</li>
-<li>
-<p>-s, --subskeleton: do not pack bpf object in config file</p>
-</li>
-<li>
-<p>-v, --verbose: print the command execution</p>
-</li>
-<li>
-<p>-y, --yaml: output config skel file in yaml</p>
-</li>
-<li>
-<p>--header-only: generate a bpf object for struct definition in header file only</p>
-</li>
-<li>
-<p>--wasm-header: generate wasm include header</p>
-</li>
-<li>
-<p>-b, --btfgen: fetch custom btfhub archive file and package into tar</p>
+<li>-c, --clang-bin <code>CLANG_BIN</code>: path of clang binary (default: clang)</li>
+<li>-l, --llvm-strip-bin <code>LLVM_STRIP_BIN</code>: path of llvm-strip binary (default: llvm-strip)</li>
+<li>-s, --subskeleton: do not pack bpf object in config file</li>
+<li>-v, --verbose: print the command execution</li>
+<li>-y, --yaml: output config skel file in yaml</li>
+<li>--header-only: generate a bpf object for struct definition in header file only</li>
+<li>--wasm-header: generate wasm include header</li>
+<li>-b, --btfgen: fetch custom btfhub archive file and package into tar
 <ul>
 <li>If <code>BTFHUB_ARCHIVE</code> does not exist, it will clone
 <a href="https://github.com/aquasecurity/btfhub-archive">btfhub</a> to <code>BTFHUB_ARCHIVE</code>.</li>
@@ -231,15 +233,9 @@ you can keep only the required btf files in <code>BTFHUB_ARCHIVE</code>.</li>
 <li>Don't worry, even the tar containing all the btfhub archives is only <code>5-10MB</code> in size.</li>
 </ul>
 </li>
-<li>
-<p>--btfhub-archive <code>BTFHUB_ARCHIVE</code>: directory to save btfhub archive file (default:<code>$HOME/.eunomia/btfhub-archive</code>)</p>
-</li>
-<li>
-<p>-h, --help: prints help documentation.</p>
-</li>
-<li>
-<p>-V, --version: prints version information.</p>
-</li>
+<li>--btfhub-archive <code>BTFHUB_ARCHIVE</code>: directory to save btfhub archive file (default:<code>$HOME/.eunomia/btfhub-archive</code>)</li>
+<li>-h, --help: prints help documentation.</li>
+<li>-V, --version: prints version information.</li>
 </ul>
 
                     </main>
